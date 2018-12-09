@@ -20,20 +20,15 @@ public class UserGuideExamples {
 		g.vertices().show();
 		g.edges().show();
 		
-		// need graphx lib
-		// Dataset<Row> vertexInDegrees = g.inDegrees();
-		
 		// Find the youngest user's age in the graph.
 		// This queries the vertex DataFrame.
-
-		// g.vertices().groupBy().min("age").show();
+		g.vertices().groupBy().min("age").show();
 		
 		// Count the number of "follows" in the graph.
 		// This queries the edge DataFrame.
-		// System.out.println(g.edges().filter("relationship = 'follow'").count());
+		System.out.println(g.edges().filter("relationship = 'follow'").count());
 		
 		// Label Propagation Algorithm (LPA)
-		
 		Dataset<Row> result = g.labelPropagation().maxIter(5).run();
 		result.select("id", "label").show();
 	}

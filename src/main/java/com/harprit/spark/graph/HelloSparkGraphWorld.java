@@ -24,8 +24,7 @@ public class HelloSparkGraphWorld {
 		// vertices table need vertices names as id
 		Dataset<Row> stationVertices = bikeStations.withColumnRenamed("name", "id").distinct();
 
-		// edges table needs each edge's source vertex as src and destination vertex as
-		// dst
+		// edges table needs each edge's source vertex as src and destination vertex as dst
 		Dataset<Row> tripEdges = tripData.withColumnRenamed("Start Station", "src").withColumnRenamed("End Station", "dst");
 
 		GraphFrame stationGraph = new GraphFrame(stationVertices, tripEdges);
