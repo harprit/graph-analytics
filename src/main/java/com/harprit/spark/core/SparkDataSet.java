@@ -1,10 +1,10 @@
-package com.harprit.spark.revise;
+package com.harprit.spark.core;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-public class SparkHelloWorld1 {
+public class SparkDataSet {
 
 	public static void main(String[] args) {
 
